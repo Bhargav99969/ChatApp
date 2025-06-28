@@ -1,12 +1,14 @@
 import cloudinary from "../config/cloudinary.js";
-import user from "../models/user.model.js";
+import user from "../models/user.model.js"
 
 export const updateprofile = async () => {
   try {
     const { profilPic } = req.body;
     const userId = req.user._id;
 
-    if (!profilPic) {
+    if 
+    (!profilPic) 
+    {
       return res.status(201).json({ message: "ERROR in getting ProfilePic" });
     }
 

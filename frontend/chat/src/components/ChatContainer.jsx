@@ -23,7 +23,7 @@ function ChatContainer() {
       getMessages(selectedUser._id);
       subscribeToMessages()
 
-      return()=>unsubcribe
+      return()=>unsubcribe()
     }
   }, [selectedUser, getMessages,subscribeToMessages,unsubcribe]);
 
