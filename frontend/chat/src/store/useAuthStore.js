@@ -79,7 +79,7 @@ export const useAuthStore = create((set, get) => ({
   const { authUser } = get();
   if (!authUser || get().socket?.connected) return;
 
-  const newsocket = io("http://localhost:3000", {
+  const newsocket = io("https://chatappbackend-tc7v.onrender.com", {
     query: {
       userId: authUser._id,
     },
