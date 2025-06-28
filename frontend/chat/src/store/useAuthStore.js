@@ -81,7 +81,7 @@ export const useAuthStore = create((set, get) => ({
 
   const newsocket = io("https://chatappbackend-tc7v.onrender.com", {
     query: {
-      userId: authUser._id,
+      userId: authUser?._id,
     },
   });
 
@@ -90,7 +90,7 @@ export const useAuthStore = create((set, get) => ({
   newsocket.on("x", (userIds) => {
    
      console.log("Online users received:", userIds);
-      // Safety: Ensure it's an array
+     
       if (Array.isArray(userIds)) {
         set({ OnlineUser: userIds });
       } else {
