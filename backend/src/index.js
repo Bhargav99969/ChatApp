@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cookiePareser())
 app.use(cors(
   {
-    origin:"http://localhost:5173",
+    origin:"https://chatapp-7ftn.onrender.com",
     credentials:true
   }
 ))
