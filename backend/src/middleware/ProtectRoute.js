@@ -7,6 +7,7 @@ import { genrateToken } from "../config/jwt.js";
 export const ProtectRoute=async(req,res,next)=>{
     try{
         const token = req.cookies.token;
+        console.log("Your Cookies from frontend: " ,req.cookies);
         if(!token){
             return res.status(401).json({message:"NO Tokens"})
         }
