@@ -1,5 +1,5 @@
 import express from "express";
-import cookiePareser from "cookie-parser"
+import cookieParser from "cookie-parser"
 
 import dotenv, { config } from "dotenv";
 import moongose from "mongoose";
@@ -12,10 +12,10 @@ import { app,server } from "./config/socket.js";
 
 dotenv.config();
 app.use(express.json());
-app.use(cookiePareser())
+app.use(cookieParser())
 app.use(cors(
   {
-     origin: ["http://localhost:5173", "https://chatapp-7ftn.onrender.com","*"],
+    origin: ["http://localhost:5173", "https://chatapp-7ftn.onrender.com","*"],
     credentials:true
   }
 ))

@@ -8,15 +8,12 @@ export const ProtectRoute=async(req,res,next)=>{
     try{
         const token = req.cookies.token;
         if(!token){
-            return res.status(201).json({message:"NO Tokens"})
+            return res.status(401).json({message:"NO Tokens"})
         }
-        console.log(process.env.jwt_secret)
         const decode =  jwt.verify(token,process.env.jwt_secret)
-        console.log(decode)
         if(!decode){
             return res.status(201).json({message:"Not allowed 2"})
         }
-        console.log(decode.userid)
 
          if (!decode || !decode.userid) {
         
@@ -29,7 +26,6 @@ export const ProtectRoute=async(req,res,next)=>{
         }
 
         req.user = olduser
-        console.log(olduser,"hhhhhhhhhhh")
 
         next()
 
