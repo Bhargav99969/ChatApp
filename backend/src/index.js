@@ -26,7 +26,10 @@ const uri = process.env.MONGO;
 app.get("/", (req, res) => {
   res.send("hello");
 });
-
+app.get("/api/test-cookie", (req, res) => {
+  console.log("COOKIES RECEIVED:", req.cookies);
+  res.json({ cookies: req.cookies });
+});
 app.use("/api/auth", router);
 app.use("/api/message", router1);
 
