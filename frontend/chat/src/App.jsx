@@ -23,12 +23,15 @@ function App() {
 
  console.log(OnlineUsers,"online user")
 
+
+
   useEffect(()=>{
     checkAuth();
   },[checkAuth])
 
   console.log({authUser})
 
+ axiosInstance.get("/test-cookie");
 
 
   if(isCheckinauth && !authUser ) return (
