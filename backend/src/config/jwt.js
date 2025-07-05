@@ -1,5 +1,7 @@
 import jwt from "jsonwebtoken";
 import user from "../models/user.model.js";
+import dotenv from "dotenv";
+dotenv.config();
 
 export const genrateToken = (userid, res) => {
   console.log(userid,"genratin token for userid")
