@@ -10,7 +10,7 @@ export const getUserForSideBar = async (req, res) => {
     console.log(req.user);
     const loggedInuser = req.user._id;
 
-    console.log("sxdcfgvbhnjkm,lxrcfgtvbhnjkm l");
+    console.log("1");
     const filteredUser = await user
       .find({ _id: { $ne: loggedInuser } })
       .select("-password");
